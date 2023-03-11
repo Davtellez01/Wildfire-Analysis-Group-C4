@@ -3,7 +3,7 @@
 ## Group information
 
 * Group Number: C4
-* Project Title: Wildifer Analysis
+* Project Title: Wildfire Analysis
 
 ## Student Information and Taks
 
