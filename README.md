@@ -17,10 +17,10 @@
 
 ### Member 2: 
 
-* Full name: 
-* E-mail: 
-* UCR NetID: 
-* Student ID:
+* Full name: Kianoosh Nooshi
+* E-mail: knoos001@ucr.edu
+* UCR NetID: knoos001
+* Student ID: 862208765
 * Task: 
 
 ### Member 3: 
