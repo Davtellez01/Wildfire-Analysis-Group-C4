@@ -21,12 +21,12 @@
 * E-mail: knoos001@ucr.edu
 * UCR NetID: knoos001
 * Student ID: 862208765
-* Task: 
+* Task: Spatio-temporal analysis
 
 ### Member 3: 
 
-* Full name: 
-* E-mail: 
-* UCR NetID: 
-* Student ID:
-* Task: 
+* Full name: Nicholas Santini
+* E-mail: nsant026@ucr.edu
+* UCR NetID: nsant026
+* Student ID: 862143128
+* Task: Temporal analysis
