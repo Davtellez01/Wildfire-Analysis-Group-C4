@@ -30,3 +30,9 @@
 * UCR NetID: nsant026
 * Student ID: 862143128
 * Task: Temporal analysis
+
+## Link to Google Drive
+
+In this google drive folder, we will have everything contained in our final submission.
+
+https://drive.google.com/drive/folders/1GWMDlU4tawXu0oIrYDxc1kjLzmiWczMH?usp=sharing
