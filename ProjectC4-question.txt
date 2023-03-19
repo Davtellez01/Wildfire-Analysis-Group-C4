@@ -1,0 +1,4 @@
+When performing our temporal analysis, why cant we simply search the parquet file for all entries with the desired county name?
+The parquet file stores county ID's, so the desired county ID must be derived from the county dataset first
+The parquet file type doesnt allow querying by row
+The parquet file doesnt contain any county data, so we must do a spatial join first
