@@ -3,6 +3,7 @@ package edu.ucr.cs.cs167.Wildfire_Analysis_Group_C4
 import org.apache.spark.SparkConf
 import org.apache.spark.beast.SparkSQLRegistration
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions.{month, concat, year, lit}
 
 
 object App {
@@ -55,14 +56,14 @@ object App {
       // get all entries in the wildfire database that match the desired county ID
       val desiredCountyDF = wildFireDF.filter(wildFireDF("County") === desiredCountyID)
 
-      //Compute the total fire intensity, SUM(frp), and group by the combination of year and month.
+      //Compute the total fire intensity, SUM(frp), and group by year and month but not day
       val desiredCountyIntensity = desiredCountyDF
-        .groupBy("acq_date")
+        .groupBy(concat(year(desiredCountyDF("acq_date")), lit("-"), month(desiredCountyDF("acq_date"))).as("year_month"))
         .sum("frp")
 
       //Sort the results lexicographically by (year, month) in a csv file
       desiredCountyIntensity
-        .sort("acq_date")
+        .sort("year_month")
         .write
         .format("csv")
         .save("wildfires" + desiredCountyName + ".csv")
