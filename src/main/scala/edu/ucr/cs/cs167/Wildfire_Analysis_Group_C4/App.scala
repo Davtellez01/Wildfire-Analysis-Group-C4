@@ -3,7 +3,7 @@ package edu.ucr.cs.cs167.Wildfire_Analysis_Group_C4
 import org.apache.spark.SparkConf
 import org.apache.spark.beast.SparkSQLRegistration
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.{month, concat, year, lit}
+import org.apache.spark.sql.functions.{concat, format_string, lit, month, year}
 
 
 object App {
@@ -15,7 +15,7 @@ object App {
 
 
     val desiredCountyName = args(0)
-    temporalAnalysis(desiredCountyName, "wildfiredb_ZIP.parquet")
+    temporalAnalysis(desiredCountyName, "wildfiredb10k_ZIP")
     }
   def temporalAnalysis(countyName : String, wildFireFileName : String): Unit = {
     val conf = new SparkConf().setAppName("Beast Example")
@@ -58,7 +58,12 @@ object App {
 
       //Compute the total fire intensity, SUM(frp), and group by year and month but not day
       val desiredCountyIntensity = desiredCountyDF
-        .groupBy(concat(year(desiredCountyDF("acq_date")), lit("-"), month(desiredCountyDF("acq_date"))).as("year_month"))
+        .groupBy(concat(
+          year(desiredCountyDF("acq_date")),
+          lit("-"),
+          format_string("%02d", month(desiredCountyDF("acq_date"))))
+          .as("year_month")
+        )
         .sum("frp")
 
       //Sort the results lexicographically by (year, month) in a csv file
