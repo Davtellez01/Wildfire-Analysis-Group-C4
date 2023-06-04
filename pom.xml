@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>edu.ucr.cs.cs167.Wildfire_Analysis_Group_C4</groupId>
-  <artifactId>nsant026_lab9</artifactId>
+  <groupId>edu.ucr.cs.cs167.knoos001</groupId>
+  <artifactId>knoos001_project_task2</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>nsant026_lab9</name>
+  <name>knoos001_project_task2</name>
   <url>http://www.myorganization.org</url>
 
   <properties>
@@ -74,7 +74,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>edu.ucr.cs.cs167.Wildfire_Analysis_Group_C4.App</mainClass>
+              <mainClass>edu.ucr.cs.cs167.knoos001.BeastScala</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -162,7 +162,7 @@
                   </excludes>
                 </filter>
               </filters>
-              <finalName>nsant026_project-${project.version}</finalName>
+              <finalName>knoos001_project_task2-uber-${project.version}</finalName>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>edu.ucr.cs.bdlab.beast.operations.Main</mainClass>
